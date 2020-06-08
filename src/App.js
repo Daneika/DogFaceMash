@@ -1,10 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import { orange } from '@material-ui/core/colors';
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { orange } from "@material-ui/core/colors";
 
-import Navbar from "./components/navbar"
-import Title from "./components/title"
+import Navbar from "./components/navbar";
+import Title from "./components/title";
+import PictureGallery from "./components/picture-gallery";
 
 const customTheme = createMuiTheme({
   palette: {
@@ -16,11 +17,15 @@ const customTheme = createMuiTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={customTheme}>
-  <Navbar/>
-  <br/>
-  <Title/>
-    </ThemeProvider>
+    <div>
+      <ThemeProvider theme={customTheme}>
+        <Navbar />
+        <br />
+        <Title />
+        <br/>
+        <PictureGallery />
+      </ThemeProvider>
+    </div>
   );
 }
 
