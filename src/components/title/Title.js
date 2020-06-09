@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -18,6 +19,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Title() {
   const classes = useStyles();
+  const history = useHistory();
+  const startGame = () => {
+    console.log("clicked");
+    history.push("/game");
+  };
 
   return (
     <Grid container className={classes.container} spacing={3}>
@@ -36,7 +42,12 @@ export default function Title() {
         </Grid>
       </Grid>
       <Grid item className={classes.container} xs={12}>
-        <Button variant="contained" color="secondary" size="large">
+        <Button
+          onClick={startGame}
+          variant="contained"
+          color="secondary"
+          size="large"
+        >
           Start
         </Button>
       </Grid>

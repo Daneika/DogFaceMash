@@ -23,7 +23,7 @@ export default function App() {
         <Navbar />
         <br />
         <Switch>
-          <Route path="/games">
+          <Route path="/game">
             <GamePage />
           </Route>
           <Route path="/">
