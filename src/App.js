@@ -4,8 +4,8 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { orange } from "@material-ui/core/colors";
 
 import Navbar from "./components/navbar";
-import Title from "./components/title";
-import PictureGallery from "./components/picture-gallery";
+import HomePage from "./components/home-page";
+
 
 const customTheme = createMuiTheme({
   palette: {
@@ -21,9 +21,7 @@ function App() {
       <ThemeProvider theme={customTheme}>
         <Navbar />
         <br />
-        <Title />
-        <br/>
-        <PictureGallery />
+        <HomePage/>
       </ThemeProvider>
     </div>
   );
