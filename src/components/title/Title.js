@@ -30,7 +30,7 @@ export default function Title() {
       <Grid item xs={12}>
         <Grid container className={classes.container}>
           <Grid item className={classes.container} xs={12}>
-            <Typography className={classes.title} gutterBottom>
+            <Typography className={classes.title}>
               Welcome to Dog Face Mash
             </Typography>
           </Grid>

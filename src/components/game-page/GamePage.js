@@ -8,8 +8,7 @@ function GamePage() {
     console.log(currRound, nextRound);
     if (currRound.length === 0) {
       if (nextRound.length === 0) {
-        history.push("/");
-        console.log("winner");
+        history.push("/winner");
       } else {
         const [dog1, dog2, ...restOfNextRound] = [...nextRound, index];
         setCurrMatchUp({ dog1, dog2 });
@@ -23,7 +22,7 @@ function GamePage() {
       setCurrRound(restOfCurrRound);
     }
   };
-  
+
   const [{ dog1, dog2 }, setCurrMatchUp] = useState({ dog1: 1, dog2: 2 });
   const [currRound, setCurrRound] = useState([3, 4]);
   const [nextRound, setNextRound] = useState([]);

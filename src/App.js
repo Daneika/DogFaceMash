@@ -7,6 +7,7 @@ import { orange } from "@material-ui/core/colors";
 import Navbar from "./components/navbar";
 import HomePage from "./components/home-page";
 import GamePage from "./components/game-page";
+import WinnerPage from "./components/winner-page";
 
 const customTheme = createMuiTheme({
   palette: {
@@ -25,6 +26,9 @@ export default function App() {
         <Switch>
           <Route path="/game">
             <GamePage />
+          </Route>
+          <Route path="/winner">
+            <WinnerPage />
           </Route>
           <Route path="/">
             <HomePage />
