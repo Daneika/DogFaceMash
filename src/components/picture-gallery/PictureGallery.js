@@ -22,7 +22,7 @@ export default function PictureGallery() {
   return (
     <div className={classes.root}>
       <GridList cellHeight={160} className={classes.gridList} cols={4}>
-        {Array.from({ length: 12 }).map((ignore, index) => (
+        {Array.from({ length: 16 }).map((ignore, index) => (
           <GridListTile key={`/images/Dog${index + 1}.jpg`} cols={1}>
             <img
               src={process.env.PUBLIC_URL + `/images/Dog${index + 1}.jpg`}
