@@ -1,6 +1,5 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 
@@ -61,7 +60,7 @@ export default function CompareDogs({ dogIndex1, dogIndex2, onNext }) {
         </Grid>
         <Grid className={classes.container} item xs={6}>
           <Button
-            onClick={() => onNext(1)}
+            onClick={() => onNext(dogIndex1)}
             variant="contained"
             color="secondary"
             size="large"
@@ -71,7 +70,7 @@ export default function CompareDogs({ dogIndex1, dogIndex2, onNext }) {
         </Grid>
         <Grid className={classes.container} item xs={6}>
           <Button
-            onClick={() => onNext(1)}
+            onClick={() => onNext(dogIndex2)}
             variant="contained"
             color="secondary"
             size="large"
@@ -83,3 +82,4 @@ export default function CompareDogs({ dogIndex1, dogIndex2, onNext }) {
     </div>
   );
 }
+

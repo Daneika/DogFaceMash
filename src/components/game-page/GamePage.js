@@ -1,14 +1,34 @@
-import React from "react";
-import CompareDogs from "../compare-dogs/CompareDogs"
-
-const handleNext = () => {
-    // Fill this in
-}
+import React, { useState } from "react";
+import CompareDogs from "../compare-dogs/CompareDogs";
+import { useHistory } from "react-router-dom";
 
 function GamePage() {
-  return (
-      <CompareDogs dogIndex1={3} dogIndex2={2} onNext={handleNext} />
-  );
+  const history = useHistory();
+  const handleNext = (index) => {
+    console.log(currRound, nextRound);
+    if (currRound.length === 0) {
+      if (nextRound.length === 0) {
+        history.push("/");
+        console.log("winner");
+      } else {
+        const [dog1, dog2, ...restOfNextRound] = [...nextRound, index];
+        setCurrMatchUp({ dog1, dog2 });
+        setCurrRound(restOfNextRound);
+        setNextRound([]);
+      }
+    } else {
+      setNextRound([...nextRound, index]);
+      const [dog1, dog2, ...restOfCurrRound] = currRound;
+      setCurrMatchUp({ dog1, dog2 });
+      setCurrRound(restOfCurrRound);
+    }
+  };
+  
+  const [{ dog1, dog2 }, setCurrMatchUp] = useState({ dog1: 1, dog2: 2 });
+  const [currRound, setCurrRound] = useState([3, 4]);
+  const [nextRound, setNextRound] = useState([]);
+
+  return <CompareDogs dogIndex1={dog1} dogIndex2={dog2} onNext={handleNext} />;
 }
 
 export default GamePage;
