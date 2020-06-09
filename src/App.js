@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { orange } from "@material-ui/core/colors";
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 import Navbar from "./components/navbar";
 import HomePage from "./components/home-page";
@@ -21,13 +22,14 @@ export default function App() {
   return (
     <Router>
       <ThemeProvider theme={customTheme}>
+        <CssBaseline/>
         <Navbar />
         <br />
         <Switch>
           <Route path="/game">
             <GamePage />
           </Route>
-          <Route path="/winner">
+          <Route path="/winner/:winner">
             <WinnerPage />
           </Route>
           <Route path="/">

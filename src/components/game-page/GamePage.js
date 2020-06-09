@@ -8,7 +8,7 @@ function GamePage() {
     console.log(currRound, nextRound);
     if (currRound.length === 0) {
       if (nextRound.length === 0) {
-        history.push("/winner");
+        history.push(`/winner/${index}`);
       } else {
         const [dog1, dog2, ...restOfNextRound] = [...nextRound, index];
         setCurrMatchUp({ dog1, dog2 });
