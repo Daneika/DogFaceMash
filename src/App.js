@@ -1,11 +1,12 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { orange } from "@material-ui/core/colors";
 
 import Navbar from "./components/navbar";
 import HomePage from "./components/home-page";
-
+import GamePage from "./components/game-page";
 
 const customTheme = createMuiTheme({
   palette: {
@@ -15,16 +16,21 @@ const customTheme = createMuiTheme({
   },
 });
 
-function App() {
+export default function App() {
   return (
-    <div>
+    <Router>
       <ThemeProvider theme={customTheme}>
         <Navbar />
         <br />
-        <HomePage/>
+        <Switch>
+          <Route path="/games">
+            <GamePage />
+          </Route>
+          <Route path="/">
+            <HomePage />
+          </Route>
+        </Switch>
       </ThemeProvider>
-    </div>
+    </Router>
   );
 }
-
-export default App;
