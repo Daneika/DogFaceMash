@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
@@ -27,7 +27,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const pickRandomDog = () => Math.floor(Math.random() * 16) + 1;
+const pickRandomDog = (pickedDogs) => {
+  const newDog = Math.floor(Math.random() * 16) + 1;
+  if (pickedDogs.includes(newDog)) {
+    return pickRandomDog(pickedDogs);
+  } else {
+    return newDog;
+  }
+};
 
 function GamePage() {
   const history = useHistory();
@@ -53,14 +60,18 @@ function GamePage() {
     }
   };
 
-  const [{ dog1, dog2 }, setCurrMatchUp] = useState({
-    dog1: pickRandomDog(),
-    dog2: pickRandomDog(),
-  });
-  const [currRoundDogs, setCurrRoundDogs] = useState([
-    pickRandomDog(),
-    pickRandomDog(),
-  ]);
+  useEffect(() => {
+    const dogs = Array.from({ length: 4 }).reduce(
+      (acc) => [...acc, pickRandomDog(acc)],
+      []
+    );
+    const [dog1, dog2, ...restOfRound] = dogs;
+    setCurrMatchUp({ dog1, dog2 });
+    setCurrRoundDogs(restOfRound);
+  }, []);
+
+  const [{ dog1, dog2 }, setCurrMatchUp] = useState({});
+  const [currRoundDogs, setCurrRoundDogs] = useState([]);
   const [nextRoundDogs, setNextRoundDogs] = useState([]);
   const [currRound, setCurrRound] = useState("");
 
