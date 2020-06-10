@@ -27,6 +27,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const pickRandomDog = () => Math.floor(Math.random() * 16) + 1;
+
 function GamePage() {
   const history = useHistory();
   const classes = useStyles();
@@ -40,7 +42,7 @@ function GamePage() {
         const [dog1, dog2, ...restOfNextRound] = [...nextRoundDogs, index];
         setCurrMatchUp({ dog1, dog2 });
         setCurrRoundDogs(restOfNextRound);
-        setCurrRound("Final Round: now compare your two chosen dogs...");
+        setCurrRound("Final Round: Now compare your two chosen dogs...");
         setNextRoundDogs([]);
       }
     } else {
@@ -51,8 +53,14 @@ function GamePage() {
     }
   };
 
-  const [{ dog1, dog2 }, setCurrMatchUp] = useState({ dog1: 1, dog2: 2 });
-  const [currRoundDogs, setCurrRoundDogs] = useState([3, 4]);
+  const [{ dog1, dog2 }, setCurrMatchUp] = useState({
+    dog1: pickRandomDog(),
+    dog2: pickRandomDog(),
+  });
+  const [currRoundDogs, setCurrRoundDogs] = useState([
+    pickRandomDog(),
+    pickRandomDog(),
+  ]);
   const [nextRoundDogs, setNextRoundDogs] = useState([]);
   const [currRound, setCurrRound] = useState("");
 
