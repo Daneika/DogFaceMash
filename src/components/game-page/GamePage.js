@@ -25,6 +25,10 @@ const useStyles = makeStyles((theme) => ({
   title: {
     textAlign: "center",
   },
+  subTitle: {
+    textAlign: "center",
+    fontWeight: "medium",
+  },
 }));
 
 const pickRandomDog = (pickedDogs) => {
@@ -88,7 +92,9 @@ function GamePage() {
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Typography className={classes.title}>{currRound}</Typography>
+          <Typography className={classes.subTitle} variant="h5" component="h6">
+            {currRound}
+          </Typography>
         </Grid>
 
         <CompareDogs dogIndex1={dog1} dogIndex2={dog2} onNext={handleNext} />

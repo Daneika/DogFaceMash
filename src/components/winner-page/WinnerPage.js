@@ -1,6 +1,7 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
+import Grow from '@material-ui/core/Grow';
 import { makeStyles } from "@material-ui/core/styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCrown } from "@fortawesome/free-solid-svg-icons";
@@ -44,11 +45,13 @@ function WinnerPage() {
           </Typography>
         </Grid>
         <Grid item className={classes.item} xs={12}>
+        <Grow in={true} timeout={1000}>
           <img
             className={classes.dogImage}
             src={process.env.PUBLIC_URL + `/images/Dog${winner}.jpg`}
             alt="Dog"
           />
+          </Grow>
         </Grid>
         <Grid item className={classes.item} xs={12}>
           <PlayAgain />
