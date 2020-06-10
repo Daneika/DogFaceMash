@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+
   },
   dogImage: {
     width: 500,
@@ -39,7 +40,7 @@ export default function CompareDogs({ dogIndex1, dogIndex2, onNext }) {
         <Button
           onClick={() => onNext(dogIndex1)}
           variant="contained"
-          color="secondary"
+          color="primary"
           size="large"
         >
           Pick Me!
@@ -49,7 +50,7 @@ export default function CompareDogs({ dogIndex1, dogIndex2, onNext }) {
         <Button
           onClick={() => onNext(dogIndex2)}
           variant="contained"
-          color="secondary"
+          color="primary"
           size="large"
         >
           Pick Me!

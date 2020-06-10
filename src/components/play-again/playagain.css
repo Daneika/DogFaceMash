@@ -18,60 +18,60 @@
 }
 @-webkit-keyframes glowing {
   0% {
-    background-color: #b20000;
-    -webkit-box-shadow: 0 0 3px #b20000;
+    background-color: #b25000;
+    -webkit-box-shadow: 0 0 3px #b25000;
   }
   50% {
-    background-color: #ff0000;
-    -webkit-box-shadow: 0 0 40px #ff0000;
+    background-color: #FFA500;
+    -webkit-box-shadow: 0 0 40px #FFA500;
   }
   100% {
-    background-color: #b20000;
-    -webkit-box-shadow: 0 0 3px #b20000;
+    background-color: #b25000;
+    -webkit-box-shadow: 0 0 3px #b25000;
   }
 }
 
 @-moz-keyframes glowing {
   0% {
-    background-color: #b20000;
-    -moz-box-shadow: 0 0 3px #b20000;
+    background-color: #b25000;
+    -moz-box-shadow: 0 0 3px #b25000;
   }
   50% {
-    background-color: #ff0000;
-    -moz-box-shadow: 0 0 40px #ff0000;
+    background-color: #FFA500;
+    -moz-box-shadow: 0 0 40px #FFa500;
   }
   100% {
-    background-color: #b20000;
-    -moz-box-shadow: 0 0 3px #b20000;
+    background-color: #b25000;
+    -moz-box-shadow: 0 0 3px #b25000;
   }
 }
 
 @-o-keyframes glowing {
   0% {
-    background-color: #b20000;
-    box-shadow: 0 0 3px #b20000;
+    background-color: #b25000;
+    box-shadow: 0 0 3px #b25000;
   }
   50% {
-    background-color: #ff0000;
-    box-shadow: 0 0 40px #ff0000;
+    background-color: #FFA500;
+    box-shadow: 0 0 40px #FFA500;
   }
   100% {
-    background-color: #b20000;
-    box-shadow: 0 0 3px #b20000;
+    background-color: #b25000;
+    box-shadow: 0 0 3px #b25000;
   }
 }
 
 @keyframes glowing {
   0% {
-    background-color: #b20000;
-    box-shadow: 0 0 3px #b20000;
+    background-color: #b25000;
+    box-shadow: 0 0 3px #b25000;
   }
   50% {
-    background-color: #ff0000;
-    box-shadow: 0 0 40px #ff0000;
+    background-color: #FFA500;
+    box-shadow: 0 0 40px #FFA500;
   }
   100% {
-    background-color: #b20000;
-    box-shadow: 0 0 3px #b20000;
+    background-color: #b25000;
+    box-shadow: 0 0 3px #b25000;
   }
 }

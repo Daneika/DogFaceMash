@@ -45,7 +45,7 @@ export default function Title() {
         <Button
           onClick={startGame}
           variant="contained"
-          color="secondary"
+          color="primary"
           size="large"
         >
           Start
