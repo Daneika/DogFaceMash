@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
+import { Typography } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 
 import clsx from "clsx";
@@ -18,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    Width:"75%",
-    maxWidth: 1000
+    Width: "75%",
+    maxWidth: 1000,
   },
   title: {
     textAlign: "center",
@@ -31,27 +32,29 @@ function GamePage() {
   const classes = useStyles();
 
   const handleNext = (index) => {
-    console.log(currRound, nextRound);
-    if (currRound.length === 0) {
-      if (nextRound.length === 0) {
+    console.log(currRoundDogs, nextRoundDogs);
+    if (currRoundDogs.length === 0) {
+      if (nextRoundDogs.length === 0) {
         history.push(`/winner/${index}`);
       } else {
-        const [dog1, dog2, ...restOfNextRound] = [...nextRound, index];
+        const [dog1, dog2, ...restOfNextRound] = [...nextRoundDogs, index];
         setCurrMatchUp({ dog1, dog2 });
-        setCurrRound(restOfNextRound);
-        setNextRound([]);
+        setCurrRoundDogs(restOfNextRound);
+        setCurrRound("Final Round: now compare your two chosen dogs...");
+        setNextRoundDogs([]);
       }
     } else {
-      setNextRound([...nextRound, index]);
-      const [dog1, dog2, ...restOfCurrRound] = currRound;
+      setNextRoundDogs([...nextRoundDogs, index]);
+      const [dog1, dog2, ...restOfCurrRound] = currRoundDogs;
       setCurrMatchUp({ dog1, dog2 });
-      setCurrRound(restOfCurrRound);
+      setCurrRoundDogs(restOfCurrRound);
     }
   };
 
   const [{ dog1, dog2 }, setCurrMatchUp] = useState({ dog1: 1, dog2: 2 });
-  const [currRound, setCurrRound] = useState([3, 4]);
-  const [nextRound, setNextRound] = useState([]);
+  const [currRoundDogs, setCurrRoundDogs] = useState([3, 4]);
+  const [nextRoundDogs, setNextRoundDogs] = useState([]);
+  const [currRound, setCurrRound] = useState("");
 
   return (
     <div className={classes.root}>
@@ -61,8 +64,14 @@ function GamePage() {
         spacing={3}
       >
         <Grid item xs={12}>
-          <h1 className={classes.title}>Which dog is cuter?</h1>
+          <Typography className={classes.title} variant="h4" component="h5">
+            Which is the cutest dog?
+          </Typography>
         </Grid>
+        <Grid item xs={12}>
+          <Typography className={classes.title}>{currRound}</Typography>
+        </Grid>
+
         <CompareDogs dogIndex1={dog1} dogIndex2={dog2} onNext={handleNext} />
       </Grid>
     </div>
