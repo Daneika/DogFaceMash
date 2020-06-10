@@ -5,6 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCrown } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
+import PlayAgain from "../play-again";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+  
   },
 }));
 
@@ -23,7 +25,7 @@ function WinnerPage() {
   const { winner } = useParams();
   return (
     <div className={classes.root}>
-      <Grid container spacing={0}>
+      <Grid container spacing={2}>
         <Grid item className={classes.item} xs={12}>
           <FontAwesomeIcon icon={faCrown} size="9x" />
         </Grid>
@@ -42,6 +44,9 @@ function WinnerPage() {
             src={process.env.PUBLIC_URL + `/images/Dog${winner}.jpg`}
             alt="Dog"
           />
+        </Grid>
+        <Grid item className={classes.item} xs={12}>
+          <PlayAgain/>
         </Grid>
       </Grid>
     </div>

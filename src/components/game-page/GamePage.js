@@ -1,9 +1,35 @@
 import React, { useState } from "react";
-import CompareDogs from "../compare-dogs/CompareDogs";
 import { useHistory } from "react-router-dom";
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+
+import clsx from "clsx";
+
+import CompareDogs from "../compare-dogs/CompareDogs";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  container: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    Width:"75%",
+    maxWidth: 1000
+  },
+  title: {
+    textAlign: "center",
+  },
+}));
 
 function GamePage() {
   const history = useHistory();
+  const classes = useStyles();
+
   const handleNext = (index) => {
     console.log(currRound, nextRound);
     if (currRound.length === 0) {
@@ -27,7 +53,20 @@ function GamePage() {
   const [currRound, setCurrRound] = useState([3, 4]);
   const [nextRound, setNextRound] = useState([]);
 
-  return <CompareDogs dogIndex1={dog1} dogIndex2={dog2} onNext={handleNext} />;
+  return (
+    <div className={classes.root}>
+      <Grid
+        className={clsx(classes.container, classes.grid)}
+        container
+        spacing={3}
+      >
+        <Grid item xs={12}>
+          <h1 className={classes.title}>Which dog is cuter?</h1>
+        </Grid>
+        <CompareDogs dogIndex1={dog1} dogIndex2={dog2} onNext={handleNext} />
+      </Grid>
+    </div>
+  );
 }
 
 export default GamePage;
