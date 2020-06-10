@@ -9,17 +9,16 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
-  grid: {
-    maxWidth: 1000,
-  },
   dogImage: {
-    width: "100%",
+    width: 500,
+    height: 400,
+    backgroundSize: "cover",
+    padding: 5,
   },
 }));
 
 export default function CompareDogs({ dogIndex1, dogIndex2, onNext }) {
   const classes = useStyles();
-
   return (
     <>
       <Grid className={classes.container} item xs={6}>

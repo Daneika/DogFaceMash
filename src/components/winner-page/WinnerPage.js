@@ -16,7 +16,11 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-  
+  },
+  dogImage: {
+    width: 700,
+    height: 550,
+    backgroundSize: "cover",
   },
 }));
 
@@ -41,12 +45,13 @@ function WinnerPage() {
         </Grid>
         <Grid item className={classes.item} xs={12}>
           <img
+            className={classes.dogImage}
             src={process.env.PUBLIC_URL + `/images/Dog${winner}.jpg`}
             alt="Dog"
           />
         </Grid>
         <Grid item className={classes.item} xs={12}>
-          <PlayAgain/>
+          <PlayAgain />
         </Grid>
       </Grid>
     </div>
