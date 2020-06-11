@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
+
 import { Typography } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
+import { makeStyles } from "@material-ui/core/styles";
 
-import clsx from "clsx";
-
-import CompareDogs from "../compare-dogs/CompareDogs";
+import CompareDogs from "./compare-dogs/CompareDogs";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -81,11 +80,7 @@ function GamePage() {
 
   return (
     <div className={classes.root}>
-      <Grid
-        className={clsx(classes.container, classes.grid)}
-        container
-        spacing={3}
-      >
+      <Grid className={classes.container} container spacing={3}>
         <Grid item xs={12}>
           <Typography className={classes.title} variant="h4" component="h5">
             Which is the cutest dog?

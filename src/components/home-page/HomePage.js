@@ -1,6 +1,7 @@
 import React from "react";
-import Title from "../title/Title";
-import PictureGallery from "../picture-gallery/PictureGallery";
+
+import Title from "./title/Title";
+import PictureGallery from "./picture-gallery/PictureGallery";
 
 function HomePage() {
   return (

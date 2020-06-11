@@ -1,16 +1,16 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
 
-import "./playagain.css"
+import Button from "@material-ui/core/Button";
 
+import "./playagain.css";
 
 function PlayAgain() {
-    const history = useHistory();
-    const playGameAgain = () => {
-        console.log("clicked");
-        history.push("/");
-      };
+  const history = useHistory();
+  const playGameAgain = () => {
+    console.log("clicked");
+    history.push("/");
+  };
   return (
     <Button
       onClick={playGameAgain}

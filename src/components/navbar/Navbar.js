@@ -1,10 +1,12 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { useHistory } from "react-router-dom";
+
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
-import { useHistory } from "react-router-dom";
+import { makeStyles } from "@material-ui/core/styles";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDog } from "@fortawesome/free-solid-svg-icons";
 
