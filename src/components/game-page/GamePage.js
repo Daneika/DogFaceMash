@@ -18,8 +18,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    Width: "75%",
+    padding:theme.spacing(1),
     maxWidth: 1000,
+    maxHeight: 500,
   },
   title: {
     textAlign: "center",

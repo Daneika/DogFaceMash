@@ -9,12 +9,14 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    padding:theme.spacing(1),
+    width: "100%",
   },
   dogImage: {
-    width: 500,
-    height: 400,
+    maxWidth: "100%",
+    maxHeight: "100%",
     backgroundSize: "cover",
-    padding: 5,
+    padding: theme.spacing(1),
   },
 }));
 
