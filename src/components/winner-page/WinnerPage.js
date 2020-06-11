@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+ 
   item: {
     width: "100%",
     display: "flex",
@@ -22,9 +23,11 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   dogImage: {
-    width: 700,
-    height: 550,
+    width: "100%",
+    maxWidth: 800,
+    height: "100%",
     backgroundSize: "cover",
+    padding: theme.spacing(1),
   },
 }));
 
