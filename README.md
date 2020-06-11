@@ -1,3 +1,11 @@
+# Dog Face Mash
+
+An app to compare pictures of dogs and choose the winner based on cuteness. Users can compare random dogs chosen from a selction of images and then their two favourite ones are compared resulting in a winner. The app idea is based on FaceMash.
+
+This is the first React app I have built from scratch and I used [Material UI](https://material-ui.com/) to help with the styling.
+
+The app has been deployed using [Heroku](https://www.heroku.com/) and can be found using this link: https://dog-face-mash.herokuapp.com/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
