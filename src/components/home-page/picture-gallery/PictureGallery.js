@@ -10,9 +10,12 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
     justifyContent: "space-around",
     overflow: "hidden",
+    maxWidth: "100%",
+    padding: theme.spacing(1),
   },
   gridList: {
-    width: 900,
+    width: 1000,
+    maxWidth: "100%",
   },
 }));
 
@@ -23,7 +26,7 @@ export default function PictureGallery() {
     <div className={classes.root}>
       <GridList cellHeight={160} className={classes.gridList} cols={4}>
         {Array.from({ length: 16 }).map((ignore, index) => (
-          <GridListTile key={`/images/Dog${index + 1}.jpg`} cols={1}>
+          <GridListTile  key={`/images/Dog${index + 1}.jpg`} cols={1}>
             <img
               src={process.env.PUBLIC_URL + `/images/Dog${index + 1}.jpg`}
               alt={`Dog${index + 1}`}
