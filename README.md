@@ -1,6 +1,6 @@
 # Dog Face Mash
 
-An app to compare pictures of dogs and choose the winner based on cuteness. Users can compare random dogs chosen from a selction of images and then their two favourite ones are compared resulting in a winner. The app idea is based on FaceMash.
+An app to compare pictures of dogs based on cuteness. Users can compare random dogs chosen from a selection of images and then in the final round select a winner. The app idea is based on FaceMash.
 
 This is the first [React](https://reactjs.org/) app I have built from scratch and I used [Material UI](https://material-ui.com/) to help with the styling and icons came from [Font Awesome](https://fontawesome.com/). All the images were taken from [Unsplash](https://unsplash.com/) and are licensed for free use (https://unsplash.com/license).
 
