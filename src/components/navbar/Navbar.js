@@ -10,12 +10,14 @@ import { makeStyles } from "@material-ui/core/styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDog } from "@fortawesome/free-solid-svg-icons";
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
+    display: "flex",
     flexGrow: 1,
   },
   icon: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(1),
   },
   title: {
     flexGrow: 1,
@@ -23,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
   link: {
     color: "inherit",
   },
+  img: {
+    justifyContent: "flex-end",
+}
 }));
 
 export default function Navbar() {
@@ -40,9 +45,14 @@ export default function Navbar() {
           <Typography variant="h6" className={classes.title}>
             <FontAwesomeIcon className={classes.icon} icon={faDog} size="lg" />
             <Link className={classes.link} href="#" onClick={backHome}>
-              <span>Dog Face Mash</span>
+              Dog Face Mash
             </Link>
-          </Typography>
+            </Typography>
+            <div className={classes.img}>
+            <Link href="#">
+            <img className={classes.img} src="github-logo.png" alt="github logo"></img></Link>
+            </div>
+          
         </Toolbar>
       </AppBar>
     </div>
