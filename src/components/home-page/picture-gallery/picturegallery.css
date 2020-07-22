@@ -1,0 +1,9 @@
+.tile {
+    transition: all 0.8s;
+    position: relative;
+}
+.tile:hover {
+transform: scale(1.3);
+z-Index: 2;
+}
+

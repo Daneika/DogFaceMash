@@ -4,18 +4,19 @@ import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import { makeStyles } from "@material-ui/core/styles";
 
+import "./picturegallery.css";
+
 const useStyles = makeStyles((theme) => ({
-  root: {
+  container: {
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-around",
-    overflow: "hidden",
-    maxWidth: "100%",
     padding: theme.spacing(1),
   },
   gridList: {
-    width: 1000,
-    maxWidth: "100%",
+    width: "50%",
+    height: "50%",
+    overflow: "visible", 
   },
 }));
 
@@ -23,11 +24,11 @@ export default function PictureGallery() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <GridList cellHeight={160} className={classes.gridList} cols={4}>
+    <div className={classes.container}>
+      <GridList className={classes.gridList} cols={4}>
         {Array.from({ length: 16 }).map((ignore, index) => (
-          <GridListTile  key={`/images/Dog${index + 1}.jpg`} cols={1}>
-            <img
+          <GridListTile className="tile"  key={`/images/Dog${index + 1}.jpg`} cols={1}>
+            <img 
               src={process.env.PUBLIC_URL + `/images/Dog${index + 1}.jpg`}
               alt={`Dog${index + 1}`}
             />
