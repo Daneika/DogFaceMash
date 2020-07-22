@@ -23,10 +23,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PictureGallery() {
   const classes = useStyles();
-  const isSm = useMediaQuery((theme) => theme.breakpoints.up("md"));
+  const isLg = useMediaQuery((theme) => theme.breakpoints.up("lg"));
+  const isMd = useMediaQuery((theme) => theme.breakpoints.up("md"));
+  const cols = isLg ? 4 : isMd ? 2 : 1;
+
   return (
     <div className={classes.container}>
-      <GridList className={classes.gridList} cols={isSm ? 4 : 2}>
+      <GridList className={classes.gridList} cols={cols}>
         {Array.from({ length: 16 }).map((ignore, index) => (
           <GridListTile
             className="tile"
